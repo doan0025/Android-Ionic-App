@@ -1,0 +1,17 @@
+<ion-view view-title="Incomplates task">
+    <ion-content class="content">
+        <ion-list>
+            <ion-item class="item item-checkbox animate-repeat ng-leave" ng-repeat="incomplete in incompletes track by $index" ng-swipe-right="deleteItem(incomplate)">
+                <label class="checkbox checkbox-energized">
+                    <input type="checkbox" ng-model="incomplete.isChecked" ng-change="setChecked($index)" />
+                </label>
+                <span ng-class="{strike: incomplate.isChecked}">{{incomplete.Name}}</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <div class="bar bar-footer bar-positive">
+        <button class="button button-clear icon ion-ios-information-outline"></button>
+        <div class="title"><button style="margin-top:5px" ng-disabled="!isChecked()" ng-click="delete(incomplate)" class="button button-positive">Remove {{deleteAllSelected()}} of {{incomplates.length}} incomplate</button></div>
+        <button ng-click="showAddIncomplateTask()" class="button button-clear icon ion-ios-plus-outline"></button>
+    </div>
+</ion-view>

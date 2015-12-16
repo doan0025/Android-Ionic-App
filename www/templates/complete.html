@@ -1,0 +1,17 @@
+<ion-view view-title="Complete task">
+    <ion-content class="content">
+        <ion-list>
+            <ion-item class="item item-checkbox animate-repeat ng-leave" ng-repeat="complete in completes track by $index" ng-swipe-right="deleteItem(task)">
+                <label class="checkbox checkbox-energized">
+                    <input type="checkbox" ng-model="complete.isChecked" ng-change="setChecked($index)" />
+                </label>
+                <span ng-class="{strike: complete.isChecked}">{{complete.Name}}</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <div class="bar bar-footer bar-positive">
+        <button class="button button-clear icon ion-ios-information-outline"></button>
+        <div class="title"><button style="margin-top:5px" ng-disabled="!isChecked()" ng-click="delete(complete)" class="button button-positive">Remove {{deleteAllSelected()}} of {{complete.length}} complete</button></div>
+        <button ng-click="showAddCompleteTask()" class="button button-clear icon ion-ios-plus-outline"></button>
+    </div>
+</ion-view>
