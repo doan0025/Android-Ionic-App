@@ -1,0 +1,21 @@
+﻿<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Add task</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeAddTask()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="submitForm(userForm.$valid)" name="userForm" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Task name</span>
+                    <input type="text" ng-model="modal.newtask" placeholder="New incomplete..." required />
+                </label>
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Add</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

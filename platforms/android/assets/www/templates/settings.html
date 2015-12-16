@@ -1,0 +1,14 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Settings</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeSettings()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ion-toggle ng-model="vibe.isChecked" ng-click="checkVibe()">Vibration</ion-toggle>
+        <ion-toggle ng-model="notify.isChecked" ng-click="checkNotify()">Notifications</ion-toggle>
+    </ion-content>
+</ion-modal-view>
+
+
